@@ -28,12 +28,12 @@ public class Waiter extends Employee {
 		
 	}
 
-	public boolean editData(Bundle %%%%%)
+	public boolean editData(Bundle new_info)
 	{
 
 	}
 
-	public boolean validateData(Bundle $$$$)
+	public boolean validateData(Bundle new_info)
 	{
 
 	}
