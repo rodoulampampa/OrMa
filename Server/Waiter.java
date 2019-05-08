@@ -10,7 +10,6 @@ public class Waiter extends Employee {
 		this.pos_charges = pos_c;
 		this.billing_account_charges = bill_account;
 		this.device = dev;
-
 	}
 
 	public static Waiter findBestForTable(Table t)
@@ -18,9 +17,11 @@ public class Waiter extends Employee {
  		
 	}
 	
-	public boolean notify()
+	public boolean notify(Notification n)
 	{
-		
+		boolean res = n.show();
+		return res;
+	
 	}
 
 	public boolean isNew()
