@@ -1,11 +1,11 @@
 public class WaitingGroup {
 
-	private string name;
-	private int number_of_people;	//perhaps to be a list
+	private String name;
+	private int number_of_people;
 	private int priority;
-	static List<WaitingGroup> WaitingGroup.name; //add to the domain model?
-
-	public WaitingGroup(string n, int number_of_people, int priority)
+	static List<WaitingGroup> waitingList;
+	
+	public WaitingGroup(String n, int number_of_people, int priority)
 	{
 		this.name = n;
 		this.number_of_people = number_of_people;
@@ -14,46 +14,28 @@ public class WaitingGroup {
 	}
 
 
-	public void addToList(this.name, num_of_p)
+	static void addToList(WaitingGroup wg)
 	{
-		for(WaitingGroup.name != this.name)
+		waitingList.add(wg);
+	}
+	
+
+	public void notifyWhenAvailable()
+	{
+		//estw kainourgio thread
+		Table t = findFreeTable(wg);
+		while (t == null)
 		{
-			WaitingGroup.name = WaitingGroup.name + this.name;
-			this.number_of_people = this.number_of_people + this.num_of_p;
-		}
-		else
-		{
-			return false;
+			t = findFreeTable();
 		}
 		
-		return RESP_ACCEPTED;
-		notifyWhenAvailable();
+		TableFreeNotification tn = new TableFreeNotification(t,  ,wg); 
+		tn.show();
 	}
 
-	public void notifyWhenAvailable(number_of_people)
+	public void remove()
 	{
-		if (table.findFreeTable() == NULL && (this.priority <= this.)) 
-			/////////////////need help here
-		return RESP_ACCEPTED;
-		else
-		{
-			return RESP_REJECTED;
-		}
-	}
-
-	public void remove(this.name, num_of_p)
-	{
-		if (setTaken == TRUE)
-		{
-			priority = priority -1;
-			WaitingGroup.name = WaitingGroup.name - this.name;
-			this.number_of_people = this.number_of_people - this.num_of_p;
-			return RESP_ACCEPTED;
-		}
-		else
-		{
-			return RESP_REJECTED;
-		}
+		waitingList.remove(this);
 		
 	}
 }
