@@ -25,49 +25,41 @@ public class Waiter extends Employee {
 		return res;
 	}
 
-	public boolean isNew(this)
+	public boolean isNew()
 	{
-		if (this.pos_charges == !NULL)
+		if (this.is_new == true)
 		{
-			return false;
+			return true;
+			
 		}
 		else
 		{
-			return true;
-			void onPay();
+			return false;
 		}
-		
 	}
 
 	public boolean editData(Bundle new_info)
 	{
 		if (validateData(new_info))
 		{
-			return RESP_ACCEPTED;
+			showSuccess();
+			return true;
 		}
 		else
 		{
-			return RESP_REJECTED;
+			showFailure();
+			return false;
 		}
 
 	}
 
 	public boolean validateData(Bundle new_info)
 	{
-		if ((this.new_info == this.username) && (this.new_info == this.password))
+		if (new_info getBoolean("is_new") == true)
 		{
-			showSuccess("Your data is valid!");
-			//Waiter dismisses the message
-			return RESP_ACCEPTED;
+			if (pos_charges == 0 && billing_account_charges == 0) return true;
+			else return false;
 		}
-		else
-		{
-			showFailure("Your data is not valid");
-			//Waiter dismisses the message
-			return RESP_REJECTED;
-		
-		}
-		
 	}
 
 }
