@@ -1,9 +1,5 @@
 public class MobileDevice extends Device {
-    private List<Notification> notification_list;
+    private List<Notification> notification_list = new ArrayList<Notification>();
 
-    public MobileDevice(List_notification notification_list) 
-    {
-            this.notification_list = notification_list;
-    }
 
 }
